@@ -1,0 +1,401 @@
+/* =======================
+   RESPONSIVE ENHANCEMENTS
+   ======================= */
+
+/* Mejoras para dispositivos táctiles */
+@media (hover: none) {
+  .project-card:hover,
+  .tech-item:hover,
+  .btn-project:hover {
+    transform: none;
+    box-shadow: inherit;
+  }
+  
+  .project-card:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Ultra wide screens (1400px+) */
+@media (min-width: 1400px) {
+  .page {
+    max-width: 1400px;
+  }
+  
+  .hero {
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .skill-category {
+    padding: 25px 20px;
+  }
+  
+  .skill-category h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .tech-item {
+    padding: 16px 20px;
+    font-size: 15px;
+    min-height: 52px;
+  }
+  
+  .tech-icon {
+    min-width: 28px;
+    height: 28px;
+  }
+  
+  .hero-content h1 {
+    font-size: 56px;
+  }
+}
+
+/* Large tablets landscape (1024px - 1199px) */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    padding: 60px 30px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+  
+  .section {
+    padding: 70px 30px;
+  }
+}
+
+/* Tablets portrait (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 50px 30px;
+    gap: 40px;
+  }
+  
+  .hero-content {
+    padding-left: 0;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Small tablets / Large phones landscape (640px - 767px) */
+@media (max-width: 767px) and (min-width: 640px) {
+  header.site {
+    padding: 15px 25px;
+  }
+  
+  .hero {
+    padding: 40px 25px;
+  }
+  
+  .section {
+    padding: 50px 25px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .skill-category {
+    padding: 25px 20px;
+  }
+  
+  .skill-category h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .tech-item {
+    padding: 16px 18px;
+    font-size: 15px;
+    min-height: 50px;
+  }
+  
+  .tech-icon {
+    min-width: 26px;
+    height: 26px;
+  }
+  
+  .hero-content h1 {
+    font-size: 32px;
+  }
+  
+  .avatar-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Mobile phones (320px - 639px) */
+@media (max-width: 639px) {
+  header.site {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .brand {
+    justify-content: center;
+  }
+  
+  nav.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  nav.main a {
+    font-size: 12px;
+    padding: 8px 12px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+  }
+  
+  .hero {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+  
+  .section {
+    padding: 40px 15px;
+  }
+  
+  .hero-content h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  
+  .hero-content h2 {
+    font-size: 20px;
+  }
+  
+  .avatar-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .social-icons {
+    gap: 10px;
+  }
+  
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .projects-grid,
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .skill-category {
+    padding: 20px 15px;
+  }
+  
+  .skill-category h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  
+  .tech-item {
+    padding: 14px 16px;
+    font-size: 14px;
+    min-height: 48px;
+  }
+  
+  .tech-icon {
+    min-width: 24px;
+    height: 24px;
+  }
+  
+  .tech-stack {
+    gap: 10px;
+  }
+  
+  .project-content {
+    padding: 15px;
+  }
+  
+  .project-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .badges {
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+/* Extra small phones (max 374px) */
+@media (max-width: 374px) {
+  .hero-content h1 {
+    font-size: 22px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .avatar-placeholder {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .project-card h3 {
+    font-size: 18px;
+  }
+  
+  .skill-category h3 {
+    font-size: 20px;
+  }
+  
+  .tech-item {
+    font-size: 12px;
+    padding: 10px 12px;
+    min-height: 42px;
+  }
+  
+  .tech-icon {
+    min-width: 20px;
+    height: 20px;
+  }
+}
+
+/* Print styles */
+@media print {
+  header.site,
+  .social-icons,
+  .contact-form,
+  .project-buttons {
+    display: none !important;
+  }
+  
+  .section {
+    padding: 20px 0;
+    page-break-inside: avoid;
+  }
+  
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 20px 0;
+  }
+  
+  .avatar-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .section.dark {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    padding: 20px 40px;
+  }
+  
+  .section {
+    padding: 40px 40px;
+  }
+  
+  .avatar-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .avatar-placeholder,
+  .project-image,
+  .social-icon {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --card: #2a2a2a;
+    --text: #ffffff;
+    --text-light: #cccccc;
+    --border: #404040;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .status-indicator {
+    animation: none;
+  }
+}

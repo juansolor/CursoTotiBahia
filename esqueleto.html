@@ -33,11 +33,16 @@
       </div>
 
       <nav class="main">
-        <a href="#sobre-mi">SOBRE MÍ</a>
-        <a href="#habilidades">HABILIDADES</a>
-        <a href="#proyectos">PROYECTOS</a>
-        <a href="#github-stats">ESTADÍSTICAS</a>
-        <a class="cta" href="#contacto">CONTACTO</a>
+        <a href="#sobre-mi" data-i18n="nav.about">SOBRE MÍ</a>
+        <a href="#habilidades" data-i18n="nav.skills">HABILIDADES</a>
+        <a href="#proyectos" data-i18n="nav.projects">PROYECTOS</a>
+        <a href="#github-stats" data-i18n="nav.stats">ESTADÍSTICAS</a>
+        <a class="cta" href="#contacto" data-i18n="nav.contact">CONTACTO</a>
+        <div class="language-switcher">
+          <button class="lang-btn active" data-lang="es">ES</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
       </nav>
     </header>
 
@@ -54,26 +59,26 @@
       </div>
 
       <div class="hero-content">
-        <h1>Juan Pablo Solorzano Ojeda</h1>
-        <p class="subtitle">Desarrollador Full Stack | Apasionado por la Tecnología</p>
-        <h2>Sobre Mí</h2>
-        <p class="lead">
+        <h1 data-i18n="hero.title">Juan Pablo Solorzano Ojeda</h1>
+        <p class="subtitle" data-i18n="hero.subtitle">Desarrollador Full Stack | Apasionado por la Tecnología</p>
+        <h2 data-i18n="hero.aboutTitle">Sobre Mí</h2>
+        <p class="lead" data-i18n="hero.description">
           Soy un desarrollador apasionado por crear soluciones tecnológicas innovadoras. Mi experiencia abarca desde el desarrollo frontend hasta backend, con un enfoque especial en crear experiencias de usuario excepcionales y sistemas escalables.<br><br>
           Constantemente busco aprender nuevas tecnologías y metodologías para mantenerme actualizado en este mundo tecnológico en constante evolución.
         </p>
         <div class="badges">
-          <span class="badge">Full Stack Developer</span>
-          <span class="badge">2+ Años Experiencia</span>
-          <span class="badge">Disponible Remoto</span>
+          <span class="badge" data-i18n="hero.badge1">Full Stack Developer</span>
+          <span class="badge" data-i18n="hero.badge2">2+ Años Experiencia</span>
+          <span class="badge" data-i18n="hero.badge3">Disponible Remoto</span>
         </div>
       </div>
     </section>
 
     <section class="section" id="habilidades">
-      <h2 class="section-title">Stack Tecnológico</h2>
+      <h2 class="section-title" data-i18n="skills.title">Stack Tecnológico</h2>
       <div class="skills-container">
         <div class="skill-category">
-          <h3>Frontend</h3>
+          <h3 data-i18n="skills.frontend">Frontend</h3>
           <div class="tech-stack">
             <div class="tech-item" data-tech="html">
               <span>HTML5 & CSS3</span>
@@ -94,7 +99,7 @@
           </div>
         </div>
         <div class="skill-category">
-          <h3>Backend</h3>
+          <h3 data-i18n="skills.backend">Backend</h3>
           <div class="tech-stack">
             <div class="tech-item" data-tech="node">
               <span>Node.js & Express</span>
@@ -115,7 +120,7 @@
           </div>
         </div>
         <div class="skill-category">
-          <h3>Herramientas</h3>
+          <h3 data-i18n="skills.tools">Herramientas</h3>
           <div class="tech-stack">
             <div class="tech-item" data-tech="git">
               <span>Git & GitHub</span>
@@ -139,7 +144,7 @@
     </section>
 
     <section class="section dark" id="proyectos">
-      <h2 class="section-title">Proyectos Destacados</h2>
+      <h2 class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-image"></div>
@@ -157,8 +162,8 @@
               <span>JavaScript</span>
             </div>
             <div class="project-buttons">
-              <a href="https://app-plc-1.onrender.com/" target="_blank" class="btn-project">VER DEMO LIVE</a>
-              <a href="https://github.com/juansolor/app-plc" target="_blank" class="btn-project">CÓDIGO FUENTE</a>
+              <a href="https://app-plc-1.onrender.com/" target="_blank" class="btn-project" data-i18n="projects.viewDemo">VER DEMO LIVE</a>
+              <a href="https://github.com/juansolor/app-plc" target="_blank" class="btn-project" data-i18n="projects.sourceCode">CÓDIGO FUENTE</a>
             </div>
           </div>
         </div>
@@ -333,5 +338,8 @@
       document.head.appendChild(link);
     });
   </script>
+  
+  <!-- Sistema de Traducción Multiidioma -->
+  <script src="translations.js"></script>
 </body>
 </html>
