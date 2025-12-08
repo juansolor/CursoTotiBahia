@@ -3,10 +3,12 @@ class PortfolioChatbot {
   constructor() {
     this.apiKey = ''; // Se configurará desde el HTML
     this.apiEndpoint = 'https://api.openai.com/v1/chat/completions';
+    this.proxyEndpoint = ''; // Endpoint del proxy de Vercel (configurable)
     this.conversationHistory = [];
     this.isOpen = false;
     this.isTyping = false;
     this.useGemini = false; // Flag para usar Gemini en lugar de OpenAI
+    this.useProxy = false; // Flag para usar proxy de Vercel
     
     // Contexto sobre Juan Pablo para el chatbot
     this.systemContext = `Eres un asistente virtual del portfolio de Juan Pablo Solorzano Ojeda, un Desarrollador Full Stack. 
@@ -173,10 +175,15 @@ Responde de manera amigable, profesional y concisa. Si te preguntan algo que no 
     this.showTypingIndicator();
 
     try {
-      // Llamar a la API (Gemini o OpenAI según configuración)
-      const response = this.useGemini 
-        ? await this.callGemini(message)
-        : await this.callOpenAI(message);
+      // Llamar a la API (Proxy, Gemini o OpenAI según configuración)
+      let response;
+      if (this.useProxy) {
+        response = await this.callProxy(message);
+      } else if (this.useGemini) {
+        response = await this.callGemini(message);
+      } else {
+        response = await this.callOpenAI(message);
+      }
       this.hideTypingIndicator();
       this.addMessage(response, 'bot');
     } catch (error) {
@@ -194,7 +201,51 @@ Responde de manera amigable, profesional y concisa. Si te preguntan algo que no 
     this.sendMessage();
   }
 
-  // Usar Google Gemini API
+  // Llamar al proxy de Vercel (MÉTODO RECOMENDADO - API key oculta)
+  async callProxy(userMessage) {
+    if (!this.proxyEndpoint) {
+      throw new Error('Proxy endpoint no configurado');
+    }
+
+    const response = await fetch(this.proxyEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        message: userMessage,
+        conversationHistory: this.conversationHistory
+      })
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Proxy API error:', errorData);
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const botResponse = data.response;
+
+    // Agregar al historial
+    this.conversationHistory.push({
+      role: 'user',
+      content: userMessage
+    });
+    this.conversationHistory.push({
+      role: 'assistant',
+      content: botResponse
+    });
+
+    // Mantener solo los últimos 10 mensajes
+    if (this.conversationHistory.length > 10) {
+      this.conversationHistory = this.conversationHistory.slice(-10);
+    }
+
+    return botResponse;
+  }
+
+  // Usar Google Gemini API directamente (NO RECOMENDADO - expone API key)
   async callGemini(userMessage) {
     if (!this.apiKey) {
       throw new Error('API key no configurada');

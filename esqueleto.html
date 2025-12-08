@@ -441,12 +441,17 @@
   <script src="chatbot.js"></script>
   <script>
     // Configuración del chatbot
-    // El chatbot usa respuestas locales inteligentes sin necesidad de API externa
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         if (window.portfolioChatbot) {
-          // Sin API key - usa respuestas locales predefinidas
+          // OPCIÓN 1: Usar proxy de Vercel (RECOMENDADO - seguro)
+          // Descomenta estas líneas después de desplegar en Vercel:
+          // window.portfolioChatbot.proxyEndpoint = 'https://tu-proyecto.vercel.app/api/chatbot';
+          // window.portfolioChatbot.useProxy = true;
+          
+          // OPCIÓN 2: Respuestas locales (ACTUAL - sin IA pero funcional)
           console.log('✅ Chatbot activado con respuestas inteligentes locales');
+          console.log('ℹ️ Para activar IA: despliega en Vercel y configura el proxy');
         }
       }, 100);
     });
