@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 
+  // Animación de conteo para logros
+  initializeAchievementCounters();
+
   // Smooth scrolling para navegación
   const navLinks = document.querySelectorAll('nav.main a[href^="#"]');
   navLinks.forEach(link => {
@@ -328,3 +331,83 @@ function initThemeSwitcher() {
   prefersDark.addEventListener('change', handleThemeChange);
   handleThemeChange(prefersDark);
 }
+
+// ========================
+// ACHIEVEMENT COUNTERS
+// ========================
+function initializeAchievementCounters() {
+  const achievementNumbers = document.querySelectorAll('.achievement-number');
+  let hasAnimated = false;
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        achievementNumbers.forEach(number => {
+          animateCounter(number);
+        });
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  const achievementsSection = document.querySelector('.achievements-section');
+  if (achievementsSection) {
+    counterObserver.observe(achievementsSection);
+  }
+}
+
+function animateCounter(element) {
+  const target = parseInt(element.getAttribute('data-target'));
+  const duration = 2000; // 2 segundos
+  const increment = target / (duration / 16); // 60fps
+  let current = 0;
+
+  const updateCounter = () => {
+    current += increment;
+    if (current < target) {
+      element.textContent = Math.floor(current);
+      requestAnimationFrame(updateCounter);
+    } else {
+      element.textContent = target;
+    }
+  };
+
+  updateCounter();
+}
+
+// GitHub Stats Image Retry Mechanism
+function setupGitHubStatsRetry() {
+  const statImages = document.querySelectorAll('.stat-card img[src*="github"], .stat-card img[src*="vercel"], .stat-card img[src*="herokuapp"]');
+  
+  statImages.forEach(img => {
+    let retryCount = 0;
+    const maxRetries = 3;
+    
+    img.addEventListener('error', function retryLoad() {
+      if (retryCount < maxRetries) {
+        retryCount++;
+        console.log(`Reintentando cargar imagen (intento ${retryCount}/${maxRetries})...`);
+        
+        // Agregar timestamp para evitar cache
+        const url = new URL(this.src);
+        url.searchParams.set('retry', Date.now());
+        
+        setTimeout(() => {
+          this.src = url.toString();
+        }, 1000 * retryCount); // Esperar más tiempo en cada reintento
+      } else {
+        console.error('No se pudo cargar la imagen después de', maxRetries, 'intentos');
+        const placeholder = this.parentElement.querySelector('.loading-placeholder');
+        if (placeholder) {
+          placeholder.textContent = '⚠️ Error al cargar. Actualiza la página.';
+          placeholder.style.color = '#dc2626';
+        }
+      }
+    });
+  });
+}
+
+// Inicializar retry mechanism cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', setupGitHubStatsRetry);

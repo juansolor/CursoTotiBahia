@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test GitHub Stats</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 50px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .test-section {
+            background: #ffffff;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        
+        h2 {
+            color: #000000;
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: #ffffff;
+            border: 2px solid #0052cc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .debug-info {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #000;">Prueba de GitHub Stats</h1>
+    
+    <div class="debug-info">
+        <strong>IMPORTANTE:</strong> Si no ves las imágenes, abre la consola (F12) para ver errores de carga.
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 1: Imagen de Placeholder (debería verse siempre)</h2>
+        <div class="stat-card">
+            <img 
+                src="https://via.placeholder.com/495x195/ffffff/000000?text=Este+texto+deberia+verse+NEGRO" 
+                alt="Test Placeholder"
+            />
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: GitHub Stats Real</h2>
+        <div class="stat-card">
+            <img 
+                src="https://github-readme-stats.vercel.app/api?username=juansolor&show_icons=true&theme=radical&hide_border=true" 
+                alt="GitHub Stats"
+                onerror="this.style.border='3px solid red'; this.alt='ERROR: No se pudo cargar la imagen';"
+            />
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Top Languages</h2>
+        <div class="stat-card">
+            <img 
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=juansolor&layout=compact&theme=radical&hide_border=true" 
+                alt="Top Languages"
+                onerror="this.style.border='3px solid red'; this.alt='ERROR: No se pudo cargar la imagen';"
+            />
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Streak Stats</h2>
+        <div class="stat-card">
+            <img 
+                src="https://streak-stats.demolab.com/?user=juansolor&theme=radical&hide_border=true" 
+                alt="Streak Stats"
+                onerror="this.style.border='3px solid red'; this.alt='ERROR: No se pudo cargar la imagen';"
+            />
+        </div>
+    </div>
+    
+    <script>
+        console.log('=== TEST DE GITHUB STATS ===');
+        
+        // Verificar todas las imágenes
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach((img, index) => {
+                img.addEventListener('load', () => {
+                    console.log(`✓ Imagen ${index + 1} cargada:`, img.src);
+                });
+                
+                img.addEventListener('error', () => {
+                    console.error(`✗ ERROR en imagen ${index + 1}:`, img.src);
+                });
+            });
+            
+            // Verificar después de 5 segundos
+            setTimeout(() => {
+                console.log('\n=== ESTADO FINAL ===');
+                images.forEach((img, index) => {
+                    console.log(`Imagen ${index + 1}:`, {
+                        src: img.src,
+                        complete: img.complete,
+                        naturalWidth: img.naturalWidth,
+                        naturalHeight: img.naturalHeight,
+                        visible: img.offsetWidth > 0 && img.offsetHeight > 0
+                    });
+                });
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

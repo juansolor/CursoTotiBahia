@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Títulos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 50px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 50px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+        .dark-bg {
+            background: #0f0f0f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prueba de Visibilidad de Títulos</h1>
+    
+    <div class="test-section">
+        <h2>Título sin clase (negro por defecto)</h2>
+        <p>Este texto debería verse negro sobre blanco.</p>
+    </div>
+
+    <div class="test-section">
+        <h2 class="section-title">Título con clase .section-title</h2>
+        <p>Este título debería verse NEGRO sobre fondo blanco.</p>
+    </div>
+
+    <div class="test-section" id="github-stats">
+        <h2 class="section-title">Estadísticas de GitHub</h2>
+        <p>Este título debería verse NEGRO porque tiene el ID #github-stats.</p>
+    </div>
+
+    <div class="test-section dark-bg contact-section">
+        <h2 class="section-title">Contacto</h2>
+        <p style="color: white;">Este título debería verse BLANCO sobre fondo oscuro.</p>
+    </div>
+
+    <div class="test-section">
+        <h2 class="section-title" style="border: 2px solid red; padding: 10px;">
+            Título con borde rojo de prueba
+        </h2>
+        <p>Si ves el borde rojo pero NO el texto, el problema es el color del texto.</p>
+    </div>
+
+    <script>
+        // Verificar estilos computados
+        document.addEventListener('DOMContentLoaded', () => {
+            const titles = document.querySelectorAll('.section-title');
+            console.log('=== PRUEBA DE TÍTULOS ===');
+            titles.forEach((title, index) => {
+                const styles = window.getComputedStyle(title);
+                console.log(`Título ${index + 1}:`, {
+                    text: title.textContent,
+                    color: styles.color,
+                    backgroundColor: styles.backgroundColor,
+                    webkitTextFillColor: styles.webkitTextFillColor,
+                    backgroundClip: styles.backgroundClip,
+                    display: styles.display,
+                    visibility: styles.visibility,
+                    opacity: styles.opacity
+                });
+            });
+        });
+    </script>
+</body>
+</html>

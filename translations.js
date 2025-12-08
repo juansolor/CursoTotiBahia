@@ -21,6 +21,17 @@ const translations = {
     'hero.badge2': '2+ Años Experiencia',
     'hero.badge3': 'Disponible Remoto',
     
+    // Achievements Section
+    'achievements.title': 'Logros Destacados',
+    'achievements.projects': 'Proyectos Completados',
+    'achievements.projectsDesc': 'Full Stack & Data Science',
+    'achievements.commits': 'Commits en GitHub',
+    'achievements.commitsDesc': 'Código limpio y documentado',
+    'achievements.repos': 'Repositorios Públicos',
+    'achievements.reposDesc': 'Open Source & Portfolio',
+    'achievements.hours': 'Horas de Código',
+    'achievements.hoursDesc': 'Aprendizaje continuo',
+    
     // Skills Section
     'skills.title': 'Stack Tecnológico',
     'skills.frontend': 'Frontend',
@@ -35,13 +46,13 @@ const translations = {
     
     // Contact Section
     'contact.title': 'Contacto',
-    'contact.subtitle': '¿Tienes un proyecto en mente?',
-    'contact.description': 'Estoy disponible para nuevos proyectos y oportunidades. No dudes en contactarme para discutir cómo podemos trabajar juntos.',
-    'contact.name': 'Nombre',
-    'contact.email': 'Email',
-    'contact.message': 'Mensaje',
+    'contact.subtitle': '¿Interesado en trabajar juntos?',
+    'contact.description': 'Estoy disponible para proyectos freelance, colaboraciones y oportunidades de trabajo remoto. Con experiencia en desarrollo Full Stack y pasión por crear soluciones innovadoras.',
+    'contact.name': 'NOMBRE',
+    'contact.email': 'E-MAIL',
+    'contact.message': 'MENSAJE',
     'contact.send': 'ENVIAR MENSAJE',
-    'contact.available': 'Disponible para proyectos',
+    'contact.available': 'Disponible para trabajo remoto',
     
     // Footer
     'footer.rights': 'Todos los derechos reservados.',
@@ -65,6 +76,17 @@ const translations = {
     'hero.badge2': '2+ Anos de Experiência',
     'hero.badge3': 'Disponível Remoto',
     
+    // Seção de Conquistas
+    'achievements.title': 'Conquistas Destacadas',
+    'achievements.projects': 'Projetos Concluídos',
+    'achievements.projectsDesc': 'Full Stack & Data Science',
+    'achievements.commits': 'Commits no GitHub',
+    'achievements.commitsDesc': 'Código limpo e documentado',
+    'achievements.repos': 'Repositórios Públicos',
+    'achievements.reposDesc': 'Open Source & Portfólio',
+    'achievements.hours': 'Horas de Código',
+    'achievements.hoursDesc': 'Aprendizagem contínua',
+    
     // Seção de Habilidades
     'skills.title': 'Stack Tecnológico',
     'skills.frontend': 'Frontend',
@@ -79,13 +101,13 @@ const translations = {
     
     // Seção de Contato
     'contact.title': 'Contato',
-    'contact.subtitle': 'Tem um projeto em mente?',
-    'contact.description': 'Estou disponível para novos projetos e oportunidades. Não hesite em me contatar para discutir como podemos trabalhar juntos.',
-    'contact.name': 'Nome',
-    'contact.email': 'Email',
-    'contact.message': 'Mensagem',
+    'contact.subtitle': 'Interessado em trabalhar juntos?',
+    'contact.description': 'Estou disponível para projetos freelance, colaborações e oportunidades de trabalho remoto. Com experiência em desenvolvimento Full Stack e paixão por criar soluções inovadoras.',
+    'contact.name': 'NOME',
+    'contact.email': 'E-MAIL',
+    'contact.message': 'MENSAGEM',
     'contact.send': 'ENVIAR MENSAGEM',
-    'contact.available': 'Disponível para projetos',
+    'contact.available': 'Disponível para trabalho remoto',
     
     // Rodapé
     'footer.rights': 'Todos os direitos reservados.',
@@ -109,6 +131,17 @@ const translations = {
     'hero.badge2': '2+ Years Experience',
     'hero.badge3': 'Remote Available',
     
+    // Achievements Section
+    'achievements.title': 'Key Achievements',
+    'achievements.projects': 'Completed Projects',
+    'achievements.projectsDesc': 'Full Stack & Data Science',
+    'achievements.commits': 'GitHub Commits',
+    'achievements.commitsDesc': 'Clean & documented code',
+    'achievements.repos': 'Public Repositories',
+    'achievements.reposDesc': 'Open Source & Portfolio',
+    'achievements.hours': 'Coding Hours',
+    'achievements.hoursDesc': 'Continuous learning',
+    
     // Skills Section
     'skills.title': 'Technology Stack',
     'skills.frontend': 'Frontend',
@@ -123,13 +156,13 @@ const translations = {
     
     // Contact Section
     'contact.title': 'Contact',
-    'contact.subtitle': 'Have a project in mind?',
-    'contact.description': 'I am available for new projects and opportunities. Feel free to contact me to discuss how we can work together.',
-    'contact.name': 'Name',
-    'contact.email': 'Email',
-    'contact.message': 'Message',
+    'contact.subtitle': 'Interested in working together?',
+    'contact.description': 'I am available for freelance projects, collaborations and remote work opportunities. With Full Stack development experience and passion for creating innovative solutions.',
+    'contact.name': 'NAME',
+    'contact.email': 'E-MAIL',
+    'contact.message': 'MESSAGE',
     'contact.send': 'SEND MESSAGE',
-    'contact.available': 'Available for projects',
+    'contact.available': 'Available for remote work',
     
     // Footer
     'footer.rights': 'All rights reserved.',

@@ -16,6 +16,10 @@
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="chatbot.css">
+  
+  <!-- Auto Contrast Fixer - Desactivado temporalmente para evitar parpadeo -->
+  <!-- <script src="contrast-fixer.js"></script> -->
   
   <!-- Preload critical resources -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,6 +80,37 @@
           <span class="badge" data-i18n="hero.badge1">Full Stack Developer</span>
           <span class="badge" data-i18n="hero.badge2">2+ Años Experiencia</span>
           <span class="badge" data-i18n="hero.badge3">Disponible Remoto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nueva Sección: Logros Destacados -->
+    <section class="section achievements-section" id="logros">
+      <h2 class="section-title" data-i18n="achievements.title">Logros Destacados</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <div class="achievement-icon">🏆</div>
+          <div class="achievement-number" data-target="15">0</div>
+          <div class="achievement-label" data-i18n="achievements.projects">Proyectos Completados</div>
+          <div class="achievement-description" data-i18n="achievements.projectsDesc">Full Stack & Data Science</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">💻</div>
+          <div class="achievement-number" data-target="500">0</div>
+          <div class="achievement-label" data-i18n="achievements.commits">Commits en GitHub</div>
+          <div class="achievement-description" data-i18n="achievements.commitsDesc">Código limpio y documentado</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">🌐</div>
+          <div class="achievement-number" data-target="12">0</div>
+          <div class="achievement-label" data-i18n="achievements.repos">Repositorios Públicos</div>
+          <div class="achievement-description" data-i18n="achievements.reposDesc">Open Source & Portfolio</div>
+        </div>
+        <div class="achievement-card">
+          <div class="achievement-icon">⚡</div>
+          <div class="achievement-number" data-target="2000">0</div>
+          <div class="achievement-label" data-i18n="achievements.hours">Horas de Código</div>
+          <div class="achievement-description" data-i18n="achievements.hoursDesc">Aprendizaje continuo</div>
         </div>
       </div>
     </section>
@@ -149,7 +184,7 @@
       </div>
     </section>
 
-    <section class="section dark" id="proyectos">
+    <section class="section" id="proyectos">
       <h2 class="section-title" data-i18n="projects.title">Proyectos Destacados</h2>
       <div class="projects-grid">
         <div class="project-card">
@@ -223,70 +258,138 @@
       <h2 class="section-title">Estadísticas de GitHub</h2>
       <div class="github-stats-container">
         <div class="stats-row">
-          <div class="stat-card">
-            <img src="https://github-readme-stats.vercel.app/api?username=juansolor&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=70a5fd&icon_color=bf91f3&text_color=38bdae" alt="GitHub Stats" />
+          <div class="stat-card github-info-card">
+            <div class="card-icon">📊</div>
+            <h3>Actividad en GitHub</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Commits</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Repositorios</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Proyectos</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Colaboraciones</div>
+              </div>
+            </div>
           </div>
-          <div class="stat-card">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=juansolor&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=70a5fd&text_color=38bdae" alt="Top Languages" />
+          <div class="stat-card github-info-card">
+            <div class="card-icon">💻</div>
+            <h3>Lenguajes Principales</h3>
+            <div class="languages-list">
+              <div class="language-item">
+                <div class="language-header">
+                  <span class="language-name">JavaScript</span>
+                  <span class="language-percent">40%</span>
+                </div>
+                <div class="language-bar">
+                  <div class="language-progress" style="width: 40%; background: linear-gradient(135deg, #f1e05a 0%, #d4c84f 100%);"></div>
+                </div>
+              </div>
+              <div class="language-item">
+                <div class="language-header">
+                  <span class="language-name">Python</span>
+                  <span class="language-percent">30%</span>
+                </div>
+                <div class="language-bar">
+                  <div class="language-progress" style="width: 30%; background: linear-gradient(135deg, #3572A5 0%, #2d5d8c 100%);"></div>
+                </div>
+              </div>
+              <div class="language-item">
+                <div class="language-header">
+                  <span class="language-name">HTML/CSS</span>
+                  <span class="language-percent">20%</span>
+                </div>
+                <div class="language-bar">
+                  <div class="language-progress" style="width: 20%; background: linear-gradient(135deg, #e34c26 0%, #c9401f 100%);"></div>
+                </div>
+              </div>
+              <div class="language-item">
+                <div class="language-header">
+                  <span class="language-name">Otros</span>
+                  <span class="language-percent">10%</span>
+                </div>
+                <div class="language-bar">
+                  <div class="language-progress" style="width: 10%; background: linear-gradient(135deg, #858585 0%, #6b6b6b 100%);"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stats-row">
-          <div class="stat-card">
-            <img src="https://github-readme-streak-stats.herokuapp.com/?user=juansolor&theme=tokyonight&hide_border=true&background=1a1b27&stroke=70a5fd&ring=bf91f3&fire=70a5fd&currStreakLabel=38bdae" alt="GitHub Streak" />
-          </div>
-          <div class="stat-card badges-card">
-            <img src="https://img.shields.io/github/followers/juansolor?style=for-the-badge&logo=github&logoColor=white&color=667eea" alt="Followers" />
-            <img src="https://img.shields.io/github/stars/juansolor?style=for-the-badge&logo=github&logoColor=white&color=667eea" alt="Stars" />
-            <img src="https://komarev.com/ghpvc/?username=juansolor&style=for-the-badge&color=667eea" alt="Profile Views" />
+        <div class="stats-row single-card-row">
+          <div class="stat-card github-links-card">
+            <div class="card-icon">🔗</div>
+            <h3>Enlaces de GitHub</h3>
+            <div class="github-buttons">
+              <a href="https://github.com/juansolor" target="_blank" class="github-btn primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                Ver Perfil Completo
+              </a>
+              <a href="https://github.com/juansolor?tab=repositories" target="_blank" class="github-btn secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/></svg>
+                Ver Repositorios
+              </a>
+              <a href="https://github.com/juansolor?tab=followers" target="_blank" class="github-btn success">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                Seguir en GitHub
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section contact-section" id="contacto">
-      <h2 class="section-title white">Contacto</h2>
+      <h2 class="section-title white" data-i18n="contact.title">Contacto</h2>
       <div class="contact-content">
         <div class="contact-info">
-          <h3>¿Interesado en trabajar juntos?</h3>
-          <p>No dudes en contactarme. Estoy disponible para trabajo remoto y siempre abierto a nuevas oportunidades.</p>
+          <h3 data-i18n="contact.subtitle">¿Interesado en trabajar juntos?</h3>
+          <p data-i18n="contact.description">Estoy disponible para proyectos freelance, colaboraciones y oportunidades de trabajo remoto. Con experiencia en desarrollo Full Stack y pasión por crear soluciones innovadoras.</p>
           <div class="contact-methods">
             <a href="mailto:juanpablo.solorzanoojeda@gmail.com" class="contact-method">
-              <span class="icon">📧</span>
+              <span class="icon">✉</span>
               <span>juanpablo.solorzanoojeda@gmail.com</span>
             </a>
-            <a href="https://www.linkedin.com/in/juan-pablo-solorzano-ojeda-290820303/" target="_blank" class="contact-method">
+            <a href="https://www.linkedin.com/in/juan-pablo-solorzano-ojeda-290820303/" target="_blank" rel="noopener" class="contact-method">
               <span class="icon">💼</span>
-              <span>LinkedIn Profile</span>
+              <span>Juan Pablo Solorzano Ojeda</span>
             </a>
-            <a href="https://github.com/juansolor" target="_blank" class="contact-method">
-              <span class="icon">👨‍💻</span>
-              <span>GitHub Profile</span>
+            <a href="https://github.com/juansolor" target="_blank" rel="noopener" class="contact-method">
+              <span class="icon">💻</span>
+              <span>github.com/juansolor</span>
             </a>
           </div>
           <div class="availability">
             <span class="status-indicator"></span>
-            <span>Disponible para trabajo remoto</span>
+            <span data-i18n="contact.available">Disponible para trabajo remoto</span>
           </div>
         </div>
         <div class="contact-form">
           <form>
             <div class="form-group">
-              <label>NOMBRE</label>
-              <input type="text" name="name" required>
+              <label data-i18n="contact.name">NOMBRE</label>
+              <input type="text" name="name" required placeholder="Tu nombre completo">
             </div>
             <div class="form-group">
-              <label>E-MAIL</label>
-              <input type="email" name="email" required>
+              <label data-i18n="contact.email">E-MAIL</label>
+              <input type="email" name="email" required placeholder="tu@email.com">
             </div>
             <div class="form-group">
               <label>ASUNTO</label>
-              <input type="text" name="subject" required>
+              <input type="text" name="subject" required placeholder="Asunto del mensaje">
             </div>
             <div class="form-group">
-              <label>MENSAJE</label>
-              <textarea name="message" rows="5" required></textarea>
+              <label data-i18n="contact.message">MENSAJE</label>
+              <textarea name="message" rows="5" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
             </div>
-            <button type="submit" class="btn-submit">ENVIAR MENSAJE</button>
+            <button type="submit" class="btn-submit" data-i18n="contact.send">ENVIAR MENSAJE</button>
           </form>
         </div>
       </div>
@@ -329,23 +432,24 @@
     } else {
       detectEmojiSupport();
     }
-    
-    // Preload GitHub stats images
-    const statsImages = [
-      'https://github-readme-stats.vercel.app/api?username=juansolor&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=70a5fd&icon_color=bf91f3&text_color=38bdae',
-      'https://github-readme-stats.vercel.app/api/top-langs/?username=juansolor&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=70a5fd&text_color=38bdae',
-      'https://github-readme-streak-stats.herokuapp.com/?user=juansolor&theme=tokyonight&hide_border=true&background=1a1b27&stroke=70a5fd&ring=bf91f3&fire=70a5fd&currStreakLabel=38bdae'
-    ];
-    
-    statsImages.forEach(src => {
-      const link = document.createElement('link');
-      link.rel = 'prefetch';
-      link.href = src;
-      document.head.appendChild(link);
-    });
   </script>
   
   <!-- Sistema de Traducción Multiidioma -->
   <script src="translations.js"></script>
+  
+  <!-- Chatbot con IA -->
+  <script src="chatbot.js"></script>
+  <script>
+    // Configuración del chatbot con Google Gemini
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        if (window.portfolioChatbot) {
+          window.portfolioChatbot.setApiKey('REMOVED_FOR_SECURITY');
+          window.portfolioChatbot.useGemini = true;
+          console.log('✅ Chatbot activado con Google Gemini AI');
+        }
+      }, 100);
+    });
+  </script>
 </body>
 </html>
