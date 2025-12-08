@@ -440,13 +440,13 @@
   <!-- Chatbot con IA -->
   <script src="chatbot.js"></script>
   <script>
-    // Configuración del chatbot con Google Gemini
+    // Configuración del chatbot
+    // El chatbot usa respuestas locales inteligentes sin necesidad de API externa
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         if (window.portfolioChatbot) {
-          window.portfolioChatbot.setApiKey('REMOVED_FOR_SECURITY');
-          window.portfolioChatbot.useGemini = true;
-          console.log('✅ Chatbot activado con Google Gemini AI');
+          // Sin API key - usa respuestas locales predefinidas
+          console.log('✅ Chatbot activado con respuestas inteligentes locales');
         }
       }, 100);
     });
